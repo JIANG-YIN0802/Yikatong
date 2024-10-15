@@ -118,7 +118,7 @@ public class PersonalActivity extends AppCompatActivity {
         person_xiaofeijilu.setOnClickListener(new View.OnClickListener() {   //消费记录
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(PersonalActivity.this, Xiaofeijilu.class);
+                Intent intent = new Intent(PersonalActivity.this, com.example.yikatong.Xiaofeijilu.class);
                 startActivity(intent);
             }
         });
