@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">一卡通</string>
+    <string name="regulars">\n
+    1、教职工用户，请使用工号登录。\n
+    2、学生用户，请使用学号登录。\n
+    3、新用户，请通过“新用户登录”完成注册激活。\n
+    4、用户登录、注册遇到相关问题，请咨询相关技术人员。</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

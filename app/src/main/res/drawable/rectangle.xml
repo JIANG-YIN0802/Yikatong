@@ -1,0 +1,8 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#FFFFFFFF"/> <!-- 背景色为白色 -->
+            <stroke android:width="1dp" android:color="#FFFAFA"/> <!-- 灰色边框，宽度为2dp -->
+        </shape>
+    </item>
+</layer-list>
