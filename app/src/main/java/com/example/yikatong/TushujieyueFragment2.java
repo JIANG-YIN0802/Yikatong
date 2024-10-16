@@ -1,4 +1,4 @@
-package com.example.yikatong.book;
+package com.example.yikatong;
 
 import android.os.Bundle;
 
@@ -9,8 +9,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
-import com.example.yikatong.R;
 
 import java.util.ArrayList;
 import java.util.List;

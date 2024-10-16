@@ -1,10 +1,12 @@
 package com.example.yikatong;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -26,6 +28,7 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 public class Wangjimima extends AppCompatActivity {
+    TextView tv_rspwd;
     EditText et_wj_xuehao,et_wj_psw1,et_wj_psw2;
     Button bt_wj_queding,bt_wj_quxiao;
     Boolean flag;
@@ -37,6 +40,10 @@ public class Wangjimima extends AppCompatActivity {
 
         findViews();
 
+        // 从assets加载字体文件
+        Typeface customFont = Typeface.createFromAsset(getAssets(), "fonts/Rainbow-Party-2.ttf");
+        // 设置字体
+        tv_rspwd.setTypeface(customFont);
         bt_wj_queding.setOnClickListener(new View.OnClickListener() {   //确定重置
             @Override
             public void onClick(View v) {
@@ -103,5 +110,6 @@ public class Wangjimima extends AppCompatActivity {
         et_wj_psw2 = findViewById(R.id.et_wj_psw2);
         bt_wj_queding = findViewById(R.id.bt_wj_queding);
         bt_wj_quxiao = findViewById(R.id.bt_wj_quxiao);
+        tv_rspwd = findViewById(R.id.tv_rspwd);
     }
 }

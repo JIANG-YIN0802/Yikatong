@@ -19,16 +19,16 @@
         <uses-library android:name="org.apache.http.legacy" android:required="false"/>
 
         <activity
-            android:name=".card_manage.Quxiaoguashi"
+            android:name=".Quxiaoguashi"
             android:exported="false" />
         <activity
-            android:name=".card_manage.Guashi"
+            android:name=".Guashi"
             android:exported="false" />
         <activity
-            android:name=".card_manage.Chongzhi"
+            android:name=".Chongzhi"
             android:exported="false" />
         <activity
-            android:name=".card_manage.Yuechaxun"
+            android:name=".Yuechaxun"
             android:exported="false" />
         <activity
             android:name=".Dengluxuzhi"
@@ -43,13 +43,13 @@
             android:name=".Regist"
             android:exported="false" />
         <activity
-            android:name=".book.Tushujieyuejilu"
+            android:name=".Tushujieyuejilu"
             android:exported="false" />
         <activity
             android:name=".Xiaofeijilu"
             android:exported="false" />
         <activity
-            android:name=".card_manage.Kapiangunali"
+            android:name=".Kapiangunali"
             android:exported="false" />
         <activity
             android:name=".menjinma"

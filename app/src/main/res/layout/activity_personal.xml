@@ -5,206 +5,175 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#CCE5FF"
+    android:background="@drawable/img_back1"
     tools:context=".PersonalActivity">
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp">
-        <ImageView
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_marginTop="80dp">
+        <com.example.yikatong.CircleImageView
             android:id="@+id/person_touxiang"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:src="@drawable/yiyangqianxi"
-            android:layout_marginRight="15dp"/>
-        <LinearLayout
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:src="@drawable/user" />
+        <TextView
+            android:id="@+id/person_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:id="@+id/person_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text=""
-                    android:textSize="20sp"
-                    />
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:background="@drawable/go"
-                    android:layout_gravity="center_vertical"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="学号:"
-                    android:textSize="18sp"/>
-                <TextView
-                    android:id="@+id/person_id"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text=""
-                    android:textSize="18sp"/>
-            </LinearLayout>
-
-        </LinearLayout>
+            android:text="姓名"
+            android:textSize="20sp" />
+        <TextView
+            android:id="@+id/tv_person_xuehao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="学号"
+            android:textSize="20sp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/person_gerenxinxi"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:gravity="center"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/bt_bk2">
         <ImageView
-        android:id="@+id/person_set"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:background="@drawable/set"
-        android:layout_gravity="center"/>
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/info"
+            android:layout_gravity="center"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="个人信息查看"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_gravity="center_vertical"/>
     </LinearLayout>
     <LinearLayout
         android:id="@+id/person_fukuanma"
+        android:gravity="center"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:background="@color/white">
+        android:layout_height="70dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/bt_bk2">
             <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:background="@drawable/saoma1"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/fukuanma"
                 android:layout_gravity="center"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_marginLeft="10dp"
                 android:text="我的付款码"
                 android:textStyle="bold"
                 android:textSize="20sp"
                 android:layout_gravity="center_vertical"/>
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginRight="15dp"
-                android:background="@drawable/go"
-                android:layout_gravity="center_vertical"/>
+
     </LinearLayout>
     <LinearLayout
         android:id="@+id/person_menjinma"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:background="@color/white">
+        android:gravity="center"
+        android:layout_height="70dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/bt_bk2">
             <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:background="@drawable/saoma2"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/menjinma"
                 android:layout_gravity="center"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_marginLeft="10dp"
                 android:text="我的门禁码"
                 android:textStyle="bold"
                 android:textSize="20sp"
                 android:layout_gravity="center_vertical"/>
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginRight="15dp"
-                android:background="@drawable/go"
-                android:layout_gravity="center_vertical"/>
+
     </LinearLayout>
     <LinearLayout
         android:id="@+id/person_xiaofeijilu"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:background="@color/white">
+        android:layout_height="70dp"
+        android:gravity="center"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/bt_bk2">
             <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:background="@drawable/xiaofeijilu"
                 android:layout_gravity="center"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_marginLeft="10dp"
                 android:text="消费记录"
                 android:textStyle="bold"
                 android:textSize="20sp"
                 android:layout_gravity="center_vertical"/>
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginRight="15dp"
-                android:background="@drawable/go"
-                android:layout_gravity="center_vertical"/>
+
     </LinearLayout>
     <LinearLayout
         android:id="@+id/person_kapianguanli"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:background="@color/white">
+        android:gravity="center"
+        android:layout_height="70dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/bt_bk2">
             <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:background="@drawable/kapianguanli"
                 android:layout_gravity="center"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_marginLeft="10dp"
                 android:text="卡片管理"
                 android:textStyle="bold"
                 android:textSize="20sp"
                 android:layout_gravity="center_vertical"/>
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginRight="15dp"
-                android:background="@drawable/go"
-                android:layout_gravity="center_vertical"/>
+
     </LinearLayout>
     <LinearLayout
-    android:id="@+id/person_tushujieyuejilu"
-    android:layout_width="match_parent"
-    android:layout_height="60dp"
-    android:layout_marginLeft="20dp"
-    android:layout_marginRight="20dp"
-    android:background="@color/white">
+        android:id="@+id/person_tushujieyue"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="70dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/bt_bk2">
         <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:background="@drawable/tushujieyue"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/tushuguanli"
             android:layout_gravity="center"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:layout_marginLeft="10dp"
             android:text="图书借阅"
             android:textStyle="bold"
             android:textSize="20sp"
             android:layout_gravity="center_vertical"/>
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginRight="15dp"
-            android:background="@drawable/go"
-            android:layout_gravity="center_vertical"/>
+
     </LinearLayout>
 
 
@@ -222,174 +191,13 @@
 
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:background="@color/white">
 
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:background="@drawable/tushujieyue"
-            android:layout_gravity="center"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginLeft="10dp"
-            android:text="图书借阅记录"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:layout_gravity="center_vertical"/>
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginRight="15dp"
-            android:background="@drawable/go"
-            android:layout_gravity="center_vertical"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:background="@color/white">
 
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:background="@drawable/tushujieyue"
-            android:layout_gravity="center"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginLeft="10dp"
-            android:text="图书借阅记录"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:layout_gravity="center_vertical"/>
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginRight="15dp"
-            android:background="@drawable/go"
-            android:layout_gravity="center_vertical"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:background="@color/white">
 
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:background="@drawable/tushujieyue"
-            android:layout_gravity="center"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginLeft="10dp"
-            android:text="图书借阅记录"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:layout_gravity="center_vertical"/>
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginRight="15dp"
-            android:background="@drawable/go"
-            android:layout_gravity="center_vertical"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:background="@color/white">
 
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:background="@drawable/tushujieyue"
-            android:layout_gravity="center"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginLeft="10dp"
-            android:text="图书借阅记录"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:layout_gravity="center_vertical"/>
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginRight="15dp"
-            android:background="@drawable/go"
-            android:layout_gravity="center_vertical"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:background="@color/white">
 
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:background="@drawable/tushujieyue"
-            android:layout_gravity="center"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginLeft="10dp"
-            android:text="图书借阅记录"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:layout_gravity="center_vertical"/>
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginRight="15dp"
-            android:background="@drawable/go"
-            android:layout_gravity="center_vertical"/>
-    </LinearLayout><LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="60dp"
-    android:layout_marginLeft="20dp"
-    android:layout_marginRight="20dp"
-    android:background="@color/white">
 
-    <ImageView
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:background="@drawable/tushujieyue"
-        android:layout_gravity="center"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:layout_marginLeft="10dp"
-        android:text="图书借阅记录"
-        android:textStyle="bold"
-        android:textSize="20sp"
-        android:layout_gravity="center_vertical"/>
-    <ImageView
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginRight="15dp"
-        android:background="@drawable/go"
-        android:layout_gravity="center_vertical"/>
-</LinearLayout>
+
 
 
 

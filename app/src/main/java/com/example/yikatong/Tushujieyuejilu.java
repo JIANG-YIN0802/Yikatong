@@ -1,4 +1,4 @@
-package com.example.yikatong.book;
+package com.example.yikatong;
 
 import android.os.Bundle;
 
@@ -7,7 +7,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
-import com.example.yikatong.R;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;

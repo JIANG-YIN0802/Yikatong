@@ -1,6 +1,8 @@
 package com.example.yikatong;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -27,8 +29,8 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 public class MainActivity extends AppCompatActivity {
-    ImageView img_login_return,img_login_cancle;
-    TextView tv_login_instructions,tv_login_regist,tv_login_forgetpsw,tv_login_agreement,tv_login_privacy;
+//    ImageView img_login_return,img_login_cancle;
+    TextView tv_login_instructions,tv_login_regist,tv_login_forgetpsw,tv_login_agreement,tv_login_privacy,tv_welcome;
     EditText et_login_id,et_login_psw;
     List<User> users;
     Button bt_login;
@@ -39,6 +41,12 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
         findViews();
+
+        // 从assets加载字体文件
+        Typeface customFont = Typeface.createFromAsset(getAssets(), "fonts/Rainbow-Party-2.ttf");
+        // 设置字体
+        tv_welcome.setTypeface(customFont);
+
 
         bt_login.setOnClickListener(new View.OnClickListener() {  //登录（简化版）
             @Override
@@ -131,26 +139,26 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        tv_login_instructions.setOnClickListener(new View.OnClickListener() {  //登录须知
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, Dengluxuzhi.class);
-                startActivity(intent);
-            }
-        });
+//        tv_login_instructions.setOnClickListener(new View.OnClickListener() {  //登录须知
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(MainActivity.this, Dengluxuzhi.class);
+//                startActivity(intent);
+//            }
+//        });
 
-        img_login_return.setOnClickListener(new View.OnClickListener() {   //返回
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
-        img_login_cancle.setOnClickListener(new View.OnClickListener() {   //取消
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+//        img_login_return.setOnClickListener(new View.OnClickListener() {   //返回
+//            @Override
+//            public void onClick(View v) {
+//                finish();
+//            }
+//        });
+//        img_login_cancle.setOnClickListener(new View.OnClickListener() {   //取消
+//            @Override
+//            public void onClick(View v) {
+//                finish();
+//            }
+//        });
     }
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data){
         super.onActivityResult(requestCode, resultCode, data);
@@ -172,10 +180,11 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
+    @SuppressLint("WrongViewCast")
     private void findViews(){
-        img_login_return = findViewById(R.id.img_login_return);
-        img_login_cancle = findViewById(R.id.img_login_cancle);
-        tv_login_instructions = findViewById(R.id.tv_login_instructions);
+//        img_login_return = findViewById(R.id.img_login_return);
+//        img_login_cancle = findViewById(R.id.img_login_cancle);
+//        tv_login_instructions = findViewById(R.id.tv_login_instructions);
         tv_login_regist = findViewById(R.id.tv_login_regist);
         tv_login_forgetpsw = findViewById(R.id.tv_login_forgetpsw);
         tv_login_agreement = findViewById(R.id.tv_login_agreement);
@@ -184,5 +193,6 @@ public class MainActivity extends AppCompatActivity {
         et_login_psw = findViewById(R.id.et_login_psw);
         bt_login = findViewById(R.id.bt_login);
         cb_login = findViewById(R.id.cb_login);
+        tv_welcome = findViewById(R.id.tv_welcome);
     }
 }

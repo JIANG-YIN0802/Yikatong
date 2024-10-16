@@ -1,4 +1,4 @@
-package com.example.yikatong.card_manage;
+package com.example.yikatong;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,8 +8,6 @@ import android.widget.LinearLayout;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.example.yikatong.R;
 
 public class Kapiangunali extends AppCompatActivity {
     ImageView img_kpreturn;

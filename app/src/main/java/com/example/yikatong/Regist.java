@@ -3,12 +3,14 @@ package com.example.yikatong;
 import static com.alibaba.fastjson.JSON.parseArray;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Looper;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -24,6 +26,7 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 public class Regist extends AppCompatActivity {
+    TextView tv_zc_regist;
     EditText et_zc_xuehao,et_zc_xingming,et_zc_age,et_zc_phone,et_zc_sushe,et_zc_psw1,et_zc_psw2;
     Button bt_zc_chongzhi,bt_zc_quxiao,bt_zc_queding;
     RadioButton zc_sex1,zc_sex2;
@@ -35,7 +38,10 @@ public class Regist extends AppCompatActivity {
         setContentView(R.layout.activity_regist);
         findViews();
 
-
+        // 从assets加载字体文件
+        Typeface customFont = Typeface.createFromAsset(getAssets(), "fonts/Rainbow-Party-2.ttf");
+        // 设置字体
+        tv_zc_regist.setTypeface(customFont);
 
         bt_zc_queding.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -142,5 +148,6 @@ public class Regist extends AppCompatActivity {
         bt_zc_quxiao = findViewById(R.id.bt_zc_quxiao);
         zc_sex1 = findViewById(R.id.zc_sex1);
         zc_sex2 = findViewById(R.id.zc_sex2);
+        tv_zc_regist = findViewById(R.id.tv_zc_regist);
     }
 }

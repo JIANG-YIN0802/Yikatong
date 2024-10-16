@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:columnCount="2"
     android:useDefaultMargins="true"
-    tools:context=".card_manage.Kapiangunali">
+    tools:context=".Kapiangunali">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"

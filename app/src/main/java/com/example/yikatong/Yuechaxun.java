@@ -1,4 +1,4 @@
-package com.example.yikatong.card_manage;
+package com.example.yikatong;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,8 +10,6 @@ import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.alibaba.fastjson.JSONArray;
-import com.example.yikatong.R;
-import com.example.yikatong.User;
 
 import java.io.IOException;
 import java.util.List;

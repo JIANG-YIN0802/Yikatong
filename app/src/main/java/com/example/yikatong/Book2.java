@@ -1,4 +1,4 @@
-package com.example.yikatong.book;
+package com.example.yikatong;
 
 import java.io.Serializable;
 
