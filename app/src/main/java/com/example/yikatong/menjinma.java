@@ -3,6 +3,7 @@ package com.example.yikatong;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -24,7 +25,7 @@ import java.util.Hashtable;
 
 public class menjinma extends AppCompatActivity {
     ImageView img_menjinma;
-    TextView tv_mj_xuehao,tv_mj_xingming;
+    TextView menjin_title,tv_mj_xuehao,tv_mj_xingming;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,15 +34,10 @@ public class menjinma extends AppCompatActivity {
         setContentView(R.layout.activity_menjinma);
 
         findViews();
-        Intent intent = getIntent();
-        Bundle bundle = intent.getExtras();
-        tv_mj_xingming.setText(bundle.getString("xingming"));
-        tv_mj_xuehao.setText(bundle.getString("xuehao"));
-        try {
-            create_QR_code(tv_mj_xuehao.getText().toString());
-        } catch (WriterException e) {
-            e.printStackTrace();
-        }
+        // 从assets加载字体文件
+        Typeface customFont = Typeface.createFromAsset(getAssets(), "fonts/jyhphy-2.ttf");
+        // 设置字体
+        menjin_title.setTypeface(customFont);
     }
 
 
@@ -69,6 +65,7 @@ public class menjinma extends AppCompatActivity {
         img_menjinma.setImageBitmap(bitmap);
     }
     private void findViews(){
+        menjin_title= findViewById(R.id.menjin_title);
         img_menjinma = findViewById(R.id.img_menjinma);
         tv_mj_xuehao = findViewById(R.id.tv_mj_xuehao);
         tv_mj_xingming = findViewById(R.id.tv_mj_xingming);

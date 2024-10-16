@@ -3,14 +3,15 @@
     android:layout_width="match_parent"
     android:layout_height="130dp"
     android:orientation="horizontal"
-    android:layout_margin="10dp">
+    android:background="@drawable/bt_bk2"
+    android:layout_margin="7dp">
     <ImageView
         android:id="@+id/img_book"
-        android:layout_width="100dp"
+        android:layout_width="50dp"
         android:layout_height="100dp"
         android:layout_gravity="center"
-        android:src="@drawable/book"
-        android:layout_weight="1"
+        android:src="@drawable/book1"
+        android:layout_weight="3"
         />
     <LinearLayout
         android:layout_width="wrap_content"

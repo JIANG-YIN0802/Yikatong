@@ -1,6 +1,8 @@
 package com.example.yikatong;
 
+import android.graphics.Typeface;
 import android.os.Bundle;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Tushujieyuejilu extends AppCompatActivity {
+    TextView book_title;
     TabLayout tabLayout;
     ViewPager viewPager;
     List<Fragment> fgList = new ArrayList<>();
@@ -22,6 +25,12 @@ public class Tushujieyuejilu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_tushujieyuejilu);
+
+        book_title = findViewById(R.id.book_title);
+        // 从assets加载字体文件
+        Typeface customFont = Typeface.createFromAsset(getAssets(), "fonts/jyhphy-2.ttf");
+        // 设置字体
+        book_title.setTypeface(customFont);
 
         tabLayout = findViewById(R.id.tabLayout);
         viewPager = findViewById(R.id.viewPager);

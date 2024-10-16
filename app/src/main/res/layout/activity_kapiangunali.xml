@@ -1,118 +1,170 @@
 <?xml version="1.0" encoding="utf-8"?>
-<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:columnCount="2"
-    android:useDefaultMargins="true"
+    android:orientation="vertical"
+    android:background="@drawable/img_back2"
+    android:gravity="center_horizontal"
     tools:context=".Kapiangunali">
+
+    <TextView
+        android:id="@+id/card_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="20dp"
+        android:text="卡片管理"
+        android:textSize="30sp" />
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:background="#3399FF"
-        android:layout_columnSpan="2">
+        android:layout_height="150dp"
+        android:layout_margin="30dp"
+        android:gravity="center_vertical"
+        android:background="@drawable/bk2">
         <ImageView
-            android:id="@+id/img_kpreturn"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginLeft="10dp"
-            android:background="@drawable/fanhui1"
-            android:layout_gravity="center_vertical"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="卡片管理"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:gravity="center"/>
-    </LinearLayout>
-    <LinearLayout
-        android:id="@+id/ll_yuechaxun"
-        android:layout_width="200dp"
-        android:layout_height="220dp"
-        android:orientation="vertical"
-        android:background="@drawable/et_bk2"
-        android:layout_columnSpan="1"
-        >
-        <ImageView
-            android:layout_width="160dp"
-            android:layout_height="160dp"
-            android:src="@drawable/yuechaxun"
-            android:layout_marginTop="20dp"
-            android:layout_gravity="center" />
-        <TextView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="10dp"
+            android:src="@drawable/user1"/>
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="余额查询"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:layout_gravity="center"/>
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="姓名："
+                    android:textSize="17sp"/>
+                <TextView
+                    android:id="@+id/card_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="姓名"
+                    android:textSize="17sp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="学号："
+                    android:textSize="17sp"/>
+                <TextView
+                    android:id="@+id/card_xuehao"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="学号"
+                    android:textSize="17sp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="余额："
+                    android:textSize="17sp"/>
+                <TextView
+                    android:id="@+id/card_money"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="余额"
+                    android:textSize="17sp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="卡片状态："
+                    android:textSize="17sp"/>
+                <TextView
+                    android:id="@+id/card_state"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="卡片状态"
+                    android:textSize="17sp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/ll_chongzhi"
-        android:layout_width="200dp"
-        android:layout_height="220dp"
-        android:orientation="vertical"
-        android:background="@drawable/et_bk2"
-        android:layout_columnSpan="1">
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/et_bk2">
         <ImageView
-            android:layout_width="160dp"
-            android:layout_height="160dp"
-            android:src="@drawable/chongzhi"
-            android:layout_marginTop="20dp"
-            android:layout_gravity="center" />
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/chongzhi"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="充值"
-            android:textStyle="bold"
             android:textSize="20sp"
-            android:layout_gravity="center"/>
+            android:layout_gravity="center_vertical"/>
     </LinearLayout>
     <LinearLayout
         android:id="@+id/ll_guashi"
-        android:layout_width="200dp"
-        android:layout_height="220dp"
-        android:orientation="vertical"
-        android:background="@drawable/et_bk2"
-        android:layout_columnSpan="1">
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/et_bk2">
         <ImageView
-            android:layout_width="160dp"
-            android:layout_height="160dp"
-            android:src="@drawable/guashi"
-            android:layout_marginTop="20dp"
-            android:layout_gravity="center" />
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/kapianguashi" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="卡片挂失"
-            android:textStyle="bold"
             android:textSize="20sp"
             android:layout_gravity="center"/>
     </LinearLayout>
     <LinearLayout
         android:id="@+id/ll_quxiaoguashi"
-        android:layout_width="200dp"
-        android:layout_height="220dp"
-        android:orientation="vertical"
-        android:background="@drawable/et_bk2"
-        android:layout_columnSpan="1">
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/et_bk2">
         <ImageView
-            android:layout_width="160dp"
-            android:layout_height="160dp"
-            android:src="@drawable/jiechuguashi"
-            android:layout_marginTop="20dp"
-            android:layout_gravity="center" />
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/jiechuguashi" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="解除挂失"
-            android:textStyle="bold"
             android:textSize="20sp"
             android:layout_gravity="center"/>
     </LinearLayout>
-</GridLayout>
+</LinearLayout>

@@ -3,6 +3,7 @@ package com.example.yikatong;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -34,7 +35,7 @@ import okhttp3.Response;
 
 public class Fukuanma extends AppCompatActivity {
     ImageView img_fukuanma;
-    TextView tv_fk_xingming,tv_fk_xuehao,tv_fk_yue;
+    TextView fukuan_title,tv_fk_xingming,tv_fk_xuehao,tv_fk_yue;
     List<User> users;
     @SuppressLint("MissingInflatedId")
     @Override
@@ -44,48 +45,10 @@ public class Fukuanma extends AppCompatActivity {
         setContentView(R.layout.activity_fukuanma);
 
         findViews();
-        Intent intent = getIntent();
-        Bundle bundle = intent.getExtras();
-        tv_fk_xuehao.setText(bundle.getString("xuehao"));
-
-        ExecutorService executor = Executors.newSingleThreadExecutor();
-        executor.submit(new Runnable() {
-            @Override
-            public void run() {
-                OkHttpClient okHttpClient = new OkHttpClient();
-                String path = "http://10.201.70.178:8080/demo/getByXuehao";
-                String xuehao = tv_fk_xuehao.getText().toString();
-                FormBody formBody = new FormBody.Builder().add("xuehao", xuehao).build();
-                Request request = new Request.Builder()
-                        .url(path)
-                        .post(formBody)
-                        .build();
-                users = null;
-                try (Response response = okHttpClient.newCall(request).execute()) {
-                    if (!response.isSuccessful()) {
-                        throw new IOException("Unexpected code " + response);
-                    }
-                    users = JSONArray.parseArray(response.body().string(), User.class);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        User user = users.get(0);
-                        tv_fk_xingming.setText(user.getName().toString());
-                        tv_fk_yue.setText(user.getBalance().toString());
-                    }
-                });
-            }
-        });
-
-
-        try {
-            create_QR_code(tv_fk_xuehao.getText().toString());
-        } catch (WriterException e) {
-            e.printStackTrace();
-        }
+// 从assets加载字体文件
+        Typeface customFont = Typeface.createFromAsset(getAssets(), "fonts/jyhphy-2.ttf");
+        // 设置字体
+        fukuan_title.setTypeface(customFont);
     }
     private void create_QR_code(String xuehao) throws WriterException {
         QRCodeWriter qrCodeWriter = new QRCodeWriter();
@@ -112,6 +75,7 @@ public class Fukuanma extends AppCompatActivity {
     }
 
     private void findViews(){
+        fukuan_title = findViewById(R.id.fukuan_title);
         img_fukuanma = findViewById(R.id.img_fukuanma);
         tv_fk_xingming = findViewById(R.id.tv_fk_xingming);
         tv_fk_xuehao = findViewById(R.id.tv_fk_xuehao);

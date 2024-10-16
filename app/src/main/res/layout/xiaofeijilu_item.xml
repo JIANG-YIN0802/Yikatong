@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="80dp"
-    android:orientation="horizontal">
+    android:background="@drawable/bt_bk2"
+    android:layout_margin="5dp">
     <ImageView
         android:layout_width="40dp"
         android:layout_height="40dp"

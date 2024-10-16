@@ -9,6 +9,7 @@ import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -46,8 +47,8 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 public class personal_info extends AppCompatActivity {
-    ImageView img_info_touxiang,img_info_return;
-    TextView tv_info_xingming,tv_info_xuehao,tv_info_xingbie,tv_info_phone,tv_info_sushe;
+    com.example.yikatong.CircleImageView img_info_touxiang;
+    TextView info_title,tv_info_xingming,tv_info_xuehao,tv_info_xingbie,tv_info_phone,tv_info_sushe;
     String xingming,xingbie,phone,sushe;
     Button bt_info_huantouxiang;
     int flag = 0;
@@ -59,11 +60,16 @@ public class personal_info extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_personal_info);
-
         findViews();
-        Intent intent = getIntent();
-        Bundle bundle = intent.getExtras();
-        tv_info_xuehao.setText(bundle.getString("xuehao"));
+        // 从assets加载字体文件
+        Typeface customFont = Typeface.createFromAsset(getAssets(), "fonts/jyhphy-2.ttf");
+        // 设置字体
+        info_title.setTypeface(customFont);
+
+
+//        Intent intent = getIntent();
+//        Bundle bundle = intent.getExtras();
+//        tv_info_xuehao.setText(bundle.getString("xuehao"));
 
 //        ExecutorService executor = Executors.newSingleThreadExecutor();
 //        executor.submit(new Runnable() {
@@ -108,18 +114,6 @@ public class personal_info extends AppCompatActivity {
 //            }
 //        });
 
-        img_info_return.setOnClickListener(new View.OnClickListener() {   //返回:如果换了头像就返回头像照片所在的路径
-            @Override
-            public void onClick(View v) {
-                if(flag != 0){
-                    Intent intent = new Intent();
-                    intent.putExtra("url", img_url);
-                    setResult(1, intent);
-                    finish();
-                }
-                finish();
-            }
-        });
 
         bt_info_huantouxiang.setOnClickListener(new View.OnClickListener() {  //相册换头像
             @Override
@@ -206,6 +200,7 @@ public class personal_info extends AppCompatActivity {
         }
     }
     private void findViews(){
+        info_title = findViewById(R.id.info_title);
         img_info_touxiang = findViewById(R.id.img_info_touxiang);
         tv_info_xingming = findViewById(R.id.tv_info_xingming);
         tv_info_xuehao = findViewById(R.id.tv_info_xuehao);
@@ -213,6 +208,5 @@ public class personal_info extends AppCompatActivity {
         tv_info_phone = findViewById(R.id.tv_info_phone);
         tv_info_sushe = findViewById(R.id.tv_info_sushe);
         bt_info_huantouxiang = findViewById(R.id.bt_info_huantouxiang);
-        img_info_return = findViewById(R.id.img_info_return);
     }
 }

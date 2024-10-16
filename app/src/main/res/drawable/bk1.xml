@@ -2,8 +2,6 @@
 <shape xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android"
     tools:ignore="ExtraText">
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:ignore="ExtraText">
     android:shape="rectangle">
     <solid
         android:color="@color/white"/>
@@ -11,5 +9,4 @@
         android:color="@color/black"/>
     <corners
         android:radius="300dip"/>
-
 </shape>

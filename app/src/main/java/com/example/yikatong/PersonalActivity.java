@@ -1,6 +1,7 @@
 package com.example.yikatong;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -12,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.List;
 
 public class PersonalActivity extends AppCompatActivity {
-    TextView person_name, person_xuehao;
+    TextView tv_person,person_name, person_xuehao;
     LinearLayout person_gerenxinxi, person_fukuanma, person_menjinma, person_xiaofeijilu, person_kapianguanli, person_tushujieyue;
     com.example.yikatong.CircleImageView person_touxiang;
     List<User> users;
@@ -23,6 +24,11 @@ public class PersonalActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_personal);
         findViews();
+
+        // 从assets加载字体文件
+        Typeface customFont = Typeface.createFromAsset(getAssets(), "fonts/jyhphy-2.ttf");
+        // 设置字体
+        tv_person.setTypeface(customFont);
 
         person_gerenxinxi.setOnClickListener(new View.OnClickListener() {   //个人信息查看
             @Override
@@ -38,9 +44,9 @@ public class PersonalActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        person_menjinma.setOnClickListener(new View.OnClickListener() {
+        person_menjinma.setOnClickListener(new View.OnClickListener() {     //门禁码
             @Override
-            public void onClick(View view) {    //门禁码
+            public void onClick(View view) {
                 Intent intent = new Intent(PersonalActivity.this, menjinma.class);
                 startActivity(intent);
             }
@@ -171,6 +177,7 @@ public class PersonalActivity extends AppCompatActivity {
     }
 
     private void findViews() {
+        tv_person = findViewById(R.id.tv_person);
         person_name = findViewById(R.id.person_name);
         person_xuehao = findViewById(R.id.tv_person_xuehao);
         person_gerenxinxi = findViewById(R.id.person_gerenxinxi);
