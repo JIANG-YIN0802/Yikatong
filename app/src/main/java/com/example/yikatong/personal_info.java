@@ -66,6 +66,10 @@ public class personal_info extends AppCompatActivity {
         // 设置字体
         info_title.setTypeface(customFont);
 
+        Intent intent = getIntent();
+        Bundle bundle = intent.getExtras();
+        tv_info_xuehao.setText(bundle.getString("xuehao"));
+
 
 //        Intent intent = getIntent();
 //        Bundle bundle = intent.getExtras();

@@ -25,6 +25,10 @@ public class PersonalActivity extends AppCompatActivity {
         setContentView(R.layout.activity_personal);
         findViews();
 
+        Intent intent = getIntent();
+        Bundle bundle = intent.getExtras();
+        person_xuehao.setText(bundle.getString("xuehao"));
+
         // 从assets加载字体文件
         Typeface customFont = Typeface.createFromAsset(getAssets(), "fonts/jyhphy-2.ttf");
         // 设置字体
@@ -34,6 +38,7 @@ public class PersonalActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(PersonalActivity.this, personal_info.class);
+                intent.putExtra("xuehao",person_xuehao.getText().toString());
                 startActivity(intent);
             }
         });
@@ -41,6 +46,7 @@ public class PersonalActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(PersonalActivity.this, Fukuanma.class);
+                intent.putExtra("xuehao",person_xuehao.getText().toString());
                 startActivity(intent);
             }
         });
@@ -48,6 +54,7 @@ public class PersonalActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(PersonalActivity.this, menjinma.class);
+                intent.putExtra("xuehao",person_xuehao.getText().toString());
                 startActivity(intent);
             }
         });
@@ -55,6 +62,7 @@ public class PersonalActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(PersonalActivity.this, Xiaofeijilu.class);
+                intent.putExtra("xuehao",person_xuehao.getText().toString());
                 startActivity(intent);
             }
         });
@@ -62,6 +70,7 @@ public class PersonalActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(PersonalActivity.this, Kapiangunali.class);
+                intent.putExtra("xuehao",person_xuehao.getText().toString());
                 startActivity(intent);
             }
         });
@@ -69,6 +78,7 @@ public class PersonalActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(PersonalActivity.this, Tushujieyuejilu.class);
+                intent.putExtra("xuehao",person_xuehao.getText().toString());
                 startActivity(intent);
             }
         });

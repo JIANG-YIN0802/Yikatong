@@ -36,19 +36,21 @@
         android:textColorHint="#D5D5D5"
         android:gravity="center"
         android:textSize="15sp" />
-        <EditText
-            android:id="@+id/et_login_psw"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:background="@drawable/bk1"
-            android:layout_margin="15dp"
-            android:layout_weight="1"
-            android:ems="15"
-            android:hint="请输入密码"
-            android:textColorHint="#D5D5D5"
-            android:gravity="center"
-            android:textSize="15sp" />
+    <EditText
+        android:id="@+id/et_login_psw"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/bk1"
+        android:layout_margin="15dp"
+        android:layout_weight="1"
+        android:ems="15"
+        android:hint="请输入密码"
+        android:textColorHint="#D5D5D5"
+        android:inputType="textPassword"
+        android:gravity="center"
+        android:textSize="15sp" >
+    </EditText>
         <Button
             android:id="@+id/bt_login"
             android:layout_width="200dp"

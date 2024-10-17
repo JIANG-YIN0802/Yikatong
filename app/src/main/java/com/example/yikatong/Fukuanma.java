@@ -45,10 +45,14 @@ public class Fukuanma extends AppCompatActivity {
         setContentView(R.layout.activity_fukuanma);
 
         findViews();
-// 从assets加载字体文件
+        // 从assets加载字体文件
         Typeface customFont = Typeface.createFromAsset(getAssets(), "fonts/jyhphy-2.ttf");
         // 设置字体
         fukuan_title.setTypeface(customFont);
+
+        Intent intent = getIntent();
+        Bundle bundle = intent.getExtras();
+        tv_fk_xuehao.setText(bundle.getString("xuehao"));
     }
     private void create_QR_code(String xuehao) throws WriterException {
         QRCodeWriter qrCodeWriter = new QRCodeWriter();

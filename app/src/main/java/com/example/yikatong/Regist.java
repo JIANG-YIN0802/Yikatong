@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -43,68 +44,89 @@ public class Regist extends AppCompatActivity {
         // 设置字体
         tv_zc_regist.setTypeface(customFont);
 
-        bt_zc_queding.setOnClickListener(new View.OnClickListener() {
+//        bt_zc_queding.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if(!(et_zc_xuehao.getText().toString().equals("")) && !(et_zc_psw1.getText().toString().equals(""))){
+//                    if(et_zc_psw1.getText().toString().equals(et_zc_psw2.getText().toString())){
+//                        // 创建一个单线程的 ExecutorService
+//                        ExecutorService executor = Executors.newSingleThreadExecutor();
+//                        // 提交一个 Runnable 任务到 ExecutorService
+//                        executor.submit(new Runnable() {
+//                            @Override
+//                            public void run() {
+//                                OkHttpClient okHttpClient = new OkHttpClient();
+//                                String path = "http://10.201.70.178:8080/demo/add";
+//                                String xuehao = et_zc_xuehao.getText().toString();
+//                                String name = et_zc_xingming.getText().toString();
+//                                String gender;
+//                                if(zc_sex1.isChecked())
+//                                    gender = "男";
+//                                else
+//                                    gender = "女";
+//                                String age = et_zc_age.getText().toString();
+//                                String phone = et_zc_phone.getText().toString();
+//                                String sushe = et_zc_sushe.getText().toString();
+//                                String balance = "0";
+//                                String cardstate = "TRUE";
+//                                String password = et_zc_psw1.getText().toString();
+//                                FormBody formBody = new FormBody.Builder()
+//                                        .add("xuehao", xuehao)
+//                                        .add("name", name)
+//                                        .add("gender", gender)
+//                                        .add("age", age)
+//                                        .add("phone", phone)
+//                                        .add("sushe", sushe)
+//                                        .add("balance", balance)
+//                                        .add("cardstate", cardstate)
+//                                        .add("password", password)
+//                                        .build();
+//                                Request request = new Request.Builder()
+//                                        .url(path)
+//                                        .post(formBody)
+//                                        .build();
+//                                try (Response response = okHttpClient.newCall(request).execute()) {
+//                                    Looper.prepare();
+//                                    if (Boolean.parseBoolean(response.body().string()))
+//                                    {
+//                                        Toast.makeText(Regist.this, "注册成功", Toast.LENGTH_SHORT).show();
+//                                        Intent intent = new Intent();
+//                                        intent.putExtra("userid", et_zc_xuehao.getText().toString());
+//                                        intent.putExtra("psw",et_zc_psw1.getText().toString());
+//                                        setResult(1, intent);
+//                                        finish();
+//                                    }
+//                                    else
+//                                    {
+//                                        Toast.makeText(Regist.this, "注册失败", Toast.LENGTH_SHORT).show();
+//                                    }
+//                                    Looper.loop();
+//                                } catch (IOException e) {
+//                                    e.printStackTrace();
+//                                }
+//                            }
+//                        });executor.shutdown();
+//                    }else{
+//                        Toast.makeText(Regist.this,"两次输入的密码不一致！！！",Toast.LENGTH_LONG).show();
+//                    }
+//                }else{
+//                    Toast.makeText(Regist.this,"请输入完整信息！！",Toast.LENGTH_LONG).show();
+//                }
+//            }
+//        });
+
+        bt_zc_queding.setOnClickListener(new View.OnClickListener() {  //注册界面确定按钮
             @Override
             public void onClick(View v) {
-                if(!(et_zc_xuehao.getText().toString().equals("")) && !(et_zc_psw1.getText().toString().equals(""))){
+                if(areAllEditTextsNotEmpty() && (zc_sex1.isChecked() || zc_sex2.isChecked())){
                     if(et_zc_psw1.getText().toString().equals(et_zc_psw2.getText().toString())){
-                        // 创建一个单线程的 ExecutorService
-                        ExecutorService executor = Executors.newSingleThreadExecutor();
-                        // 提交一个 Runnable 任务到 ExecutorService
-                        executor.submit(new Runnable() {
-                            @Override
-                            public void run() {
-                                OkHttpClient okHttpClient = new OkHttpClient();
-                                String path = "http://10.201.70.178:8080/demo/add";
-                                String xuehao = et_zc_xuehao.getText().toString();
-                                String name = et_zc_xingming.getText().toString();
-                                String gender;
-                                if(zc_sex1.isChecked())
-                                    gender = "男";
-                                else
-                                    gender = "女";
-                                String age = et_zc_age.getText().toString();
-                                String phone = et_zc_phone.getText().toString();
-                                String sushe = et_zc_sushe.getText().toString();
-                                String balance = "0";
-                                String cardstate = "TRUE";
-                                String password = et_zc_psw1.getText().toString();
-                                FormBody formBody = new FormBody.Builder()
-                                        .add("xuehao", xuehao)
-                                        .add("name", name)
-                                        .add("gender", gender)
-                                        .add("age", age)
-                                        .add("phone", phone)
-                                        .add("sushe", sushe)
-                                        .add("balance", balance)
-                                        .add("cardstate", cardstate)
-                                        .add("password", password)
-                                        .build();
-                                Request request = new Request.Builder()
-                                        .url(path)
-                                        .post(formBody)
-                                        .build();
-                                try (Response response = okHttpClient.newCall(request).execute()) {
-                                    Looper.prepare();
-                                    if (Boolean.parseBoolean(response.body().string()))
-                                    {
-                                        Toast.makeText(Regist.this, "注册成功", Toast.LENGTH_SHORT).show();
-                                        Intent intent = new Intent();
-                                        intent.putExtra("userid", et_zc_xuehao.getText().toString());
-                                        intent.putExtra("psw",et_zc_psw1.getText().toString());
-                                        setResult(1, intent);
-                                        finish();
-                                    }
-                                    else
-                                    {
-                                        Toast.makeText(Regist.this, "注册失败", Toast.LENGTH_SHORT).show();
-                                    }
-                                    Looper.loop();
-                                } catch (IOException e) {
-                                    e.printStackTrace();
-                                }
-                            }
-                        });executor.shutdown();
+                        //注册成功返回内容（请求服务器操作部分还未编写）
+                        Toast.makeText(Regist.this, "注册成功", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent();
+                        intent.putExtra("userid", et_zc_xuehao.getText().toString());
+                        intent.putExtra("psw",et_zc_psw1.getText().toString());
+                        setResult(1, intent);
+                        finish();
                     }else{
                         Toast.makeText(Regist.this,"两次输入的密码不一致！！！",Toast.LENGTH_LONG).show();
                     }
@@ -131,9 +153,20 @@ public class Regist extends AppCompatActivity {
         bt_zc_quxiao.setOnClickListener(new View.OnClickListener() {   //取消按钮
             @Override
             public void onClick(View v) {
+                Toast.makeText(Regist.this,"用户取消注册",Toast.LENGTH_LONG).show();
                 finish();
             }
         });
+    }
+
+    private boolean areAllEditTextsNotEmpty() {   //判断是不是所有的输入框都输入了信息
+        EditText[] editTexts = {et_zc_xuehao, et_zc_xingming, et_zc_phone, et_zc_age,et_zc_sushe,et_zc_psw1,et_zc_psw2};
+        for (EditText editText : editTexts) {
+            if (editText.getText().toString().trim().isEmpty()) {
+                return false;
+            }
+        }
+        return true;
     }
     private void findViews(){
         et_zc_xuehao = findViewById(R.id.et_zc_xuehao);

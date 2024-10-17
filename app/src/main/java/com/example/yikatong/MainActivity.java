@@ -29,10 +29,9 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 public class MainActivity extends AppCompatActivity {
-//    ImageView img_login_return,img_login_cancle;
-    TextView tv_login_instructions,tv_login_regist,tv_login_forgetpsw,tv_login_agreement,tv_login_privacy,tv_welcome;
+    TextView tv_login_regist,tv_login_forgetpsw,tv_login_agreement,tv_login_privacy,tv_welcome;
     EditText et_login_id,et_login_psw;
-    List<User> users;
+//    List<User> users;
     Button bt_login;
     CheckBox cb_login;
     @Override
@@ -48,11 +47,24 @@ public class MainActivity extends AppCompatActivity {
         tv_welcome.setTypeface(customFont);
 
 
-        bt_login.setOnClickListener(new View.OnClickListener() {  //登录（简化版）
+        bt_login.setOnClickListener(new View.OnClickListener() {  //登录（待完善）
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, PersonalActivity.class);
-                startActivity(intent);
+                if(!(et_login_id.getText().toString().trim().isEmpty() || et_login_psw.getText().toString().trim().isEmpty()) ){
+                    if(cb_login.isChecked()){
+                        /*
+                         * 在检查完输入框的内容不为空后应该还要请求服务器检查数据库中是否有该用户信息，待完成
+                         * */
+                        Toast.makeText(MainActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(MainActivity.this, PersonalActivity.class);
+                        intent.putExtra("xuehao",et_login_id.getText().toString());
+                        startActivity(intent);
+                    }else{
+                        Toast.makeText(MainActivity.this,"请阅读并同意用户协议与隐私政策",Toast.LENGTH_LONG).show();
+                    }
+                }else{
+                    Toast.makeText(MainActivity.this, "请完整填写学号或密码信息", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -138,29 +150,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-//        tv_login_instructions.setOnClickListener(new View.OnClickListener() {  //登录须知
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(MainActivity.this, Dengluxuzhi.class);
-//                startActivity(intent);
-//            }
-//        });
-
-//        img_login_return.setOnClickListener(new View.OnClickListener() {   //返回
-//            @Override
-//            public void onClick(View v) {
-//                finish();
-//            }
-//        });
-//        img_login_cancle.setOnClickListener(new View.OnClickListener() {   //取消
-//            @Override
-//            public void onClick(View v) {
-//                finish();
-//            }
-//        });
     }
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data){
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data){   //从注册/重置的Activity获取数据
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode == 1){  //从用户注册界面返回
             if(resultCode == 1){  //注册成功返回
@@ -182,9 +173,6 @@ public class MainActivity extends AppCompatActivity {
     }
     @SuppressLint("WrongViewCast")
     private void findViews(){
-//        img_login_return = findViewById(R.id.img_login_return);
-//        img_login_cancle = findViewById(R.id.img_login_cancle);
-//        tv_login_instructions = findViewById(R.id.tv_login_instructions);
         tv_login_regist = findViewById(R.id.tv_login_regist);
         tv_login_forgetpsw = findViewById(R.id.tv_login_forgetpsw);
         tv_login_agreement = findViewById(R.id.tv_login_agreement);

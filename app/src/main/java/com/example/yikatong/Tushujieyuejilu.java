@@ -1,5 +1,6 @@
 package com.example.yikatong;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.widget.TextView;
@@ -31,6 +32,10 @@ public class Tushujieyuejilu extends AppCompatActivity {
         Typeface customFont = Typeface.createFromAsset(getAssets(), "fonts/jyhphy-2.ttf");
         // 设置字体
         book_title.setTypeface(customFont);
+
+        Intent intent = getIntent();
+        Bundle bundle = intent.getExtras();
+        String xuehao = bundle.getString("xuehao");
 
         tabLayout = findViewById(R.id.tabLayout);
         viewPager = findViewById(R.id.viewPager);

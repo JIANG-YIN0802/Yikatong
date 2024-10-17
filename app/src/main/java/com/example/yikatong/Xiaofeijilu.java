@@ -1,6 +1,7 @@
 package com.example.yikatong;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.widget.TextView;
@@ -28,8 +29,13 @@ public class Xiaofeijilu extends AppCompatActivity {
         Typeface customFont = Typeface.createFromAsset(getAssets(), "fonts/jyhphy-2.ttf");
         // 设置字体
         consume_title.setTypeface(customFont);
+
+        Intent intent = getIntent();
+        Bundle bundle = intent.getExtras();
+        String xuehao = bundle.getString("xuehao");
+
         init();
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.rv_xiaofeijilu);
+        RecyclerView recyclerView = findViewById(R.id.rv_xiaofeijilu);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(layoutManager);

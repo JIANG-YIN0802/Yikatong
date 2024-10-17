@@ -38,6 +38,10 @@ public class menjinma extends AppCompatActivity {
         Typeface customFont = Typeface.createFromAsset(getAssets(), "fonts/jyhphy-2.ttf");
         // 设置字体
         menjin_title.setTypeface(customFont);
+
+        Intent intent = getIntent();
+        Bundle bundle = intent.getExtras();
+        tv_mj_xuehao.setText(bundle.getString("xuehao"));
     }
 
 
